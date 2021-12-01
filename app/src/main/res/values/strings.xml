@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AppControlPersonal</string>
+    <string name="text_subrayado"><u>Acciones</u></string>
 </resources>
