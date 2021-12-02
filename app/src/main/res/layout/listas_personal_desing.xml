@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background='#420818'
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imgFotoPerfil"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_marginVertical="8.5dp"
+            android:layout_marginLeft="8.5dp"
+            android:background="@color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+        <TextView
+            android:id="@+id/lblDni"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8.5dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/mulish_regular"
+            android:text="DNI:"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toRightOf="@id/imgFotoPerfil"
+            app:layout_constraintTop_toTopOf="parent"></TextView>
+
+        <TextView
+            android:id="@+id/txtDni"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/mulish_regular"
+            android:text="78458545"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toRightOf="@id/lblDni"
+            app:layout_constraintTop_toTopOf="parent"></TextView>
+
+        <TextView
+            android:id="@+id/txtNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8.5dp"
+            android:fontFamily="@font/mulish_regular"
+            android:text="James Dias"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toRightOf="@id/imgFotoPerfil"
+            app:layout_constraintTop_toBottomOf="@id/lblDni"></TextView>
+
+        <TextView
+            android:id="@+id/lblCelular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/mulishlight"
+            android:text="Celular:"
+            android:textColor="#FCDC3C"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toRightOf="@id/txtDni"
+            app:layout_constraintTop_toTopOf="parent"></TextView>
+
+        <TextView
+            android:id="@+id/txtCelular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/mulishlight"
+            android:text="958658548"
+            android:textColor="#FCDC3C"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toRightOf="@id/lblCelular"
+            app:layout_constraintTop_toTopOf="parent"></TextView>
+
+        <TextView
+            android:id="@+id/lblGenero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:fontFamily="@font/mulishlight"
+            android:text="Genero:"
+            android:textColor="#FCDC3C"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toRightOf="@id/txtDni"
+            app:layout_constraintTop_toBottomOf="@id/lblCelular"></TextView>
+
+        <TextView
+            android:id="@+id/txtGenero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:fontFamily="@font/mulishlight"
+            android:text="Femenino"
+            android:textColor="#FCDC3C"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toRightOf="@id/lblCelular"
+            app:layout_constraintTop_toBottomOf="@id/txtCelular"></TextView>
+
+        <TextView
+            android:id="@+id/lblEdad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8.5dp"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="@font/mulishlight"
+            android:text="45"
+            android:textColor="#FCDC3C"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"></TextView>
+
+        <TextView
+            android:id="@+id/txtEdad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="@font/mulishlight"
+            android:text="Edad:"
+            android:textColor="#FCDC3C"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="@id/lblEdad"></TextView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
