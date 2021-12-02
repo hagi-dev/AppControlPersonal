@@ -18,11 +18,14 @@
         <entry key="..\:/Users/HAGI/AndroidStudioProjects/AppControlPersonal/app/src/main/res/drawable/asistencias.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/HAGI/AndroidStudioProjects/AppControlPersonal/app/src/main/res/drawable/buscar.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/HAGI/AndroidStudioProjects/AppControlPersonal/app/src/main/res/drawable/contrato.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/HAGI/AndroidStudioProjects/AppControlPersonal/app/src/main/res/drawable/ic_baseline_add_business_24.xml" value="0.2203125" />
         <entry key="..\:/Users/HAGI/AndroidStudioProjects/AppControlPersonal/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
         <entry key="..\:/Users/HAGI/AndroidStudioProjects/AppControlPersonal/app/src/main/res/drawable/personal.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/HAGI/AndroidStudioProjects/AppControlPersonal/app/src/main/res/layout/activity_home.xml" value="0.264" />
         <entry key="..\:/Users/HAGI/AndroidStudioProjects/AppControlPersonal/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/HAGI/AndroidStudioProjects/AppControlPersonal/app/src/main/res/layout/lista_contrato_desing.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/HAGI/AndroidStudioProjects/AppControlPersonal/app/src/main/res/layout/lista_personal_design.xml" value="0.536" />
+        <entry key="..\:/Users/HAGI/AndroidStudioProjects/AppControlPersonal/app/src/main/res/layout/listas_personal_desing.xml" value="0.4" />
       </map>
     </option>
   </component>

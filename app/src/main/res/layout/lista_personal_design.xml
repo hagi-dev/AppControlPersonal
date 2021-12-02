@@ -15,7 +15,7 @@
         <androidx.constraintlayout.utils.widget.ImageFilterView
             android:id="@+id/imageFilterView"
             android:layout_width="0dp"
-            android:layout_height="43dp"
+            android:layout_height="50dp"
             android:layout_weight="1"
             app:srcCompat="@android:drawable/btn_star_big_on" />
 

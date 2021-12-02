@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
-            android:name=".personal"
+            android:name=".MainActivity"
             android:exported="true" >
 
 
@@ -22,7 +22,7 @@
 
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".personal"
             android:exported="true">
         </activity>
     </application>
