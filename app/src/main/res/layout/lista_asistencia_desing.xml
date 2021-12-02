@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background='#420818'
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/lblDni"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8.5dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/mulish_regular"
+            android:text="DNI:"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></TextView>
+
+        <TextView
+            android:id="@+id/txtDni"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/mulish_regular"
+            android:text="78458545"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toRightOf="@id/lblDni"
+            app:layout_constraintTop_toTopOf="parent"></TextView>
+
+        <TextView
+            android:id="@+id/txtNombree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8.5dp"
+            android:fontFamily="@font/mulish_regular"
+            android:text="James Dias"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblDni"></TextView>
+
+        <TextView
+            android:id="@+id/lblHorasT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/mulishlight"
+            android:text="Horas T:"
+            android:textColor="#FCDC3C"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toRightOf="@id/txtDni"
+            app:layout_constraintTop_toTopOf="parent"></TextView>
+
+        <TextView
+            android:id="@+id/txtHoras"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/mulishlight"
+            android:text="40hr"
+            android:textColor="#FCDC3C"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toRightOf="@id/lblHorasT"
+            app:layout_constraintTop_toTopOf="parent"></TextView>
+
+        <TextView
+            android:id="@+id/lblHorasD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:fontFamily="@font/mulishlight"
+            android:text="Horas D:"
+            android:textColor="#FCDC3C"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toRightOf="@id/txtDni"
+            app:layout_constraintTop_toBottomOf="@id/lblHorasT"></TextView>
+
+        <TextView
+            android:id="@+id/txtHorasD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:fontFamily="@font/mulishlight"
+            android:text="5 hr"
+            android:textColor="#FCDC3C"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toRightOf="@id/lblHorasT"
+            app:layout_constraintTop_toBottomOf="@id/txtHoras"></TextView>
+
+        <TextView
+            android:id="@+id/lblArea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/mulishlight"
+            android:text="Area:"
+            android:textColor="#FCDC3C"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toRightOf="@id/txtHoras"
+            app:layout_constraintTop_toTopOf="parent"></TextView>
+
+        <TextView
+            android:id="@+id/txtVeta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/mulishlight"
+            android:text="Ventas"
+            android:textColor="#FCDC3C"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toRightOf="@id/lblArea"
+            app:layout_constraintTop_toTopOf="parent"></TextView>
+
+        <TextView
+            android:id="@+id/lblAsistencia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:fontFamily="@font/mulishlight"
+            android:text="Asistencia:"
+            android:textColor="#FCDC3C"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toRightOf="@id/txtHoras"
+            app:layout_constraintTop_toBottomOf="@id/txtVeta"></TextView>
+
+        <ImageView
+            android:id="@+id/imgCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-10dp"
+            android:src="@drawable/check"
+            app:layout_constraintLeft_toRightOf="@id/txtVeta"
+            app:layout_constraintTop_toBottomOf="@id/txtVeta"></ImageView>
+
+        <CheckBox
+            android:id="@+id/checkBox3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></CheckBox>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
