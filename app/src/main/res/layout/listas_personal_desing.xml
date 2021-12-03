@@ -14,15 +14,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
+    <com.mikhaellopez.circularimageview.CircularImageView
             android:id="@+id/imgFotoPerfil"
-            android:layout_width="33dp"
-            android:layout_height="33dp"
-            android:layout_marginVertical="8.5dp"
-            android:layout_marginLeft="8.5dp"
-            android:background="@color/white"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+            android:src="@drawable/a"
+            app:civ_border_color="#FCDC3C"
+            app:civ_border_width="1dp"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"></ImageView>
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
             android:id="@+id/lblDni"
@@ -137,6 +140,16 @@
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="@id/lblEdad"></TextView>
+
+        <CheckBox
+            android:id="@+id/checkBox3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="#961137"
+            android:checked="false"
+            android:layout_marginRight="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
