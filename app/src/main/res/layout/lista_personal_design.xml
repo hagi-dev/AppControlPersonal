@@ -20,7 +20,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="49dp"
-        android:layout_weight="7">
+        android:layout_weight="7"
+        android:paddingVertical="4dp">
 
         <TextView
             android:id="@+id/textView7"
@@ -59,6 +60,8 @@
             android:id="@+id/checkBox3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="-8dp"
+            android:layout_marginEnd="12dp"
             android:buttonTint="#FFFDFD"
             android:checked="false"
             app:layout_constraintEnd_toEndOf="parent"
