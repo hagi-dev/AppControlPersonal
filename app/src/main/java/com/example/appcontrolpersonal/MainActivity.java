@@ -8,6 +8,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.listas_personal_desing);
+        setContentView(R.layout.lista_tipo_trabajador_desing);
     }
 }
