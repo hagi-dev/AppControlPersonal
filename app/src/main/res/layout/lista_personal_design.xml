@@ -9,16 +9,17 @@
     android:padding="9dp"
     android:background="#420818">
 
-    <androidx.constraintlayout.utils.widget.ImageFilterView
-        android:id="@+id/imageFilterView"
+    <com.mikhaellopez.circularimageview.CircularImageView
         android:layout_width="0dp"
-        android:layout_height="43dp"
+        android:layout_height="40dp"
         android:layout_weight="1"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
+        android:src="@drawable/girlone"
+        app:civ_border_color="#FCDC3C"
+        app:civ_border_width="2dp"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
-        android:layout_height="match_parent"
+        android:layout_height="49dp"
         android:layout_weight="7">
 
         <TextView
@@ -28,6 +29,7 @@
             android:layout_marginStart="9dp"
             android:text="DNI:"
             android:textColor="#FFFFFF"
+            android:textSize="13sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,8 +37,10 @@
             android:id="@+id/textView14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
             android:text="900 255 663"
             android:textColor="#FCDC3C"
+            android:textSize="13sp"
             app:layout_constraintStart_toEndOf="@+id/textView13"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -44,8 +48,10 @@
             android:id="@+id/textView10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
             android:text="70405060"
             android:textColor="#FFFFFF"
+            android:textSize="13sp"
             app:layout_constraintStart_toEndOf="@+id/textView7"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -53,6 +59,8 @@
             android:id="@+id/checkBox3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:buttonTint="#FFFDFD"
+            android:checked="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="TouchTargetSizeCheck" />
@@ -61,10 +69,11 @@
             android:id="@+id/textView13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="40dp"
             android:text="Celular:"
             android:textColor="#FCDC3C"
-            app:layout_constraintStart_toEndOf="@+id/textView10"
+            android:textSize="13sp"
+            app:layout_constraintStart_toEndOf="@+id/textView6"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -74,6 +83,7 @@
             android:layout_marginStart="9dp"
             android:text="JALZ DELE'Z"
             android:textColor="#FFFFFF"
+            android:textSize="13sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -81,18 +91,20 @@
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
             android:text="Genero:"
             android:textColor="#FCDC3C"
+            android:textSize="13sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView6" />
+            app:layout_constraintStart_toStartOf="@+id/textView13" />
 
         <TextView
             android:id="@+id/textView15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
             android:text="M"
             android:textColor="#FCDC3C"
+            android:textSize="13sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView11" />
 
@@ -102,6 +114,7 @@
             android:layout_height="wrap_content"
             android:text="18"
             android:textColor="#FCDC3C"
+            android:textSize="13sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
@@ -109,8 +122,10 @@
             android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="4dp"
             android:text="Edad:"
             android:textColor="#FCDC3C"
+            android:textSize="13sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/textView16" />
     </androidx.constraintlayout.widget.ConstraintLayout>
