@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:background="@color/background">
-<!-- start of header-->
+    <!-- start of header-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="81dp"
@@ -135,18 +135,7 @@
         </LinearLayout>
         <!-- end of acciones static-->
         <!-- start of filtering static-->
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width=""
-            android:layout_height="">
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-        <!-- end of finterong static-->
-        <!-- start of list static-->
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width=""
-            android:layout_height="">
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
         <!-- end of list static-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>

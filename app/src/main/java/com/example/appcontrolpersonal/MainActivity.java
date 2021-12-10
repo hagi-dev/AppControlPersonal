@@ -1,11 +1,20 @@
 package com.example.appcontrolpersonal;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.DatePickerDialog;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
     LinearLayout btnHome;
@@ -20,13 +29,14 @@ public class MainActivity extends AppCompatActivity {
     TextView txtAsistencia;
     ImageView imgPersonal;
     TextView txtPersonal;
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        imgHome=(ImageView)findViewById(R.id.imgHome);
+       imgHome=(ImageView)findViewById(R.id.imgHome);
         imgAsistencia=(ImageView)findViewById(R.id.imgAsistencia);
         imgContrato=(ImageView)findViewById(R.id.imgContrato);
         imgPersonal=(ImageView)findViewById(R.id.imgPersonal);
@@ -40,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         btnContrato=(LinearLayout)findViewById(R.id.btnContrato);
         imgHome.setColorFilter(getResources().getColor(R.color.selectionIcons));
         txtHome.setTextColor(getResources().getColor(R.color.selectionIcons));
+        context = this;
 
         btnAsistencia.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 colorSelection("contrato");
+                Intent intent= new Intent(context,Contrato.class);
+                startActivity(intent);
             }
         });
 
@@ -95,5 +108,8 @@ public class MainActivity extends AppCompatActivity {
                 txtHome.setTextColor(getResources().getColor(R.color.selectionIcons));
                 break;
         }
+
     }
 }
+
+
