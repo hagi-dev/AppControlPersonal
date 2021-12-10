@@ -6,27 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:background="@color/background">
-
-    <!-- <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textField"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="prueba jako cabrera"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>-->
-
+<!-- start of header-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="81dp"
         app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/header"
-        android:paddingHorizontal="20dp"        >
+        android:paddingHorizontal="20dp">
         <TextView
             android:id="@+id/home"
             android:layout_width="wrap_content"
@@ -52,14 +38,120 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <!-- end of header-->
+    <!-- start of body-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_marginHorizontal="20dp"
+        android:layout_height="wrap_content"
+
         app:layout_constraintTop_toBottomOf="@+id/header">
+        <!-- start of acciones static-->
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="73dp"
+            android:background="@color/backgroundMenu"
+            android:orientation="vertical"
+            android:paddingVertical="8dp"
+            android:paddingHorizontal="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/mulish_regular"
+                android:text="Lista"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="0dp"
+                    android:fontFamily="@font/mulish_regular"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:layout_weight="1"
+                    android:text="@string/text_subrayado"
+                    android:textColor="@color/white" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="right|center_vertical"
+                    android:orientation="horizontal">
+
+
+                    <Button
+                        android:id="@+id/button1"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginHorizontal="5dp"
+                        android:background="@drawable/ic_baseline_filter_alt_24"
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+                    <Button
+                        android:id="@+id/button6"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginHorizontal="5dp"
+                        android:background="@drawable/ic_baseline_delete_outline_24"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+                    <Button
+                        android:id="@+id/button3"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginHorizontal="5dp"
+                        android:background="@drawable/ic_baseline_history_24"
+                        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+                    <Button
+                        android:id="@+id/button4"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginHorizontal="5dp"
+                        android:background="@drawable/ic_baseline_add_circle_outline_24"
+                        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+                    <Button
+                        android:id="@+id/button5"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginHorizontal="5dp"
+                        android:background="@drawable/ic_baseline_arrow_circle_down_24"
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <!-- end of acciones static-->
+        <!-- start of filtering static-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width=""
+            android:layout_height="">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- end of finterong static-->
+        <!-- start of list static-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width=""
+            android:layout_height="">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- end of list static-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
+    <!-- end of body-->
+    <!-- start of menu-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
@@ -69,18 +161,22 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <LinearLayout
+            android:id="@+id/btnHome"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/imgHome"
                 android:layout_width="25dp"
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:layout_height="wrap_content"
-                android:src="@drawable/home"/>
+                android:src="@drawable/home"
+                />
             <TextView
+                android:id="@+id/txtHome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
@@ -91,12 +187,14 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/btnContrato"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/imgContrato"
                 android:layout_width="25dp"
                 android:layout_weight="1"
                 android:pointerIcon="arrow"
@@ -104,6 +202,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/contrato"/>
             <TextView
+                android:id="@+id/txtContrato"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
@@ -114,18 +213,21 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/btnPersonal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/imgPersonal"
                 android:layout_width="25dp"
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:layout_height="wrap_content"
                 android:src="@drawable/personal"/>
             <TextView
+                android:id="@+id/txtPersonal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
@@ -136,18 +238,21 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/btnAsistencia"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/imgAsistencia"
                 android:layout_width="25dp"
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:layout_height="wrap_content"
                 android:src="@drawable/asistencias"/>
             <TextView
+                android:id="@+id/txtAsistencia"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
@@ -161,6 +266,6 @@
 
     </LinearLayout>
 
-
+    <!-- end of menu-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
