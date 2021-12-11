@@ -18,7 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Contrato"/>
+        <activity android:name=".ContratoDate"/>
     </application>
 
 </manifest>

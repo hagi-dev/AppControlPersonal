@@ -13,7 +13,7 @@ import android.widget.ImageView;
 
 import java.util.Calendar;
 
-public class Contrato extends AppCompatActivity {
+public class ContratoDate extends AppCompatActivity {
 
     private static final String CERO = "0";
     private static final String BARRA = "/";

@@ -2,19 +2,13 @@ package com.example.appcontrolpersonal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.DatePicker;
-import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
     LinearLayout btnHome;
@@ -25,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     TextView txtHome;
     ImageView imgContrato;
     TextView txtContrato;
+    TextView txtTitle;
     ImageView imgAsistencia;
     TextView txtAsistencia;
     ImageView imgPersonal;
@@ -36,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-       imgHome=(ImageView)findViewById(R.id.imgHome);
+
+        imgHome=(ImageView)findViewById(R.id.imgHome);
         imgAsistencia=(ImageView)findViewById(R.id.imgAsistencia);
         imgContrato=(ImageView)findViewById(R.id.imgContrato);
         imgPersonal=(ImageView)findViewById(R.id.imgPersonal);
@@ -44,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         txtAsistencia=(TextView)findViewById(R.id.txtAsistencia);
         txtContrato=(TextView)findViewById(R.id.txtContrato);
         txtPersonal=(TextView)findViewById(R.id.txtPersonal);
+        txtTitle=(TextView)findViewById(R.id.txtTitle);
         btnHome=(LinearLayout)findViewById(R.id.btnHome);
         btnPersonal=(LinearLayout)findViewById(R.id.btnPersonal);
         btnAsistencia=(LinearLayout)findViewById(R.id.btnAsistencia);
@@ -56,25 +53,29 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 colorSelection("asistencia");
+                txtTitle.setText("Asistencia");
             }
         });
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 colorSelection("home");
+                txtTitle.setText("Home");
             }
         });
         btnPersonal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 colorSelection("personal");
+                txtTitle.setText("Personal");
             }
         });
         btnContrato.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 colorSelection("contrato");
-                Intent intent= new Intent(context,Contrato.class);
+                txtTitle.setText("Contrato");
+                Intent intent= new Intent(context, ContratoDate.class);
                 startActivity(intent);
             }
         });
