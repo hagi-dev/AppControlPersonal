@@ -7,6 +7,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lyContenedor"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background='#420818'
@@ -55,7 +56,7 @@
             app:layout_constraintTop_toTopOf="parent"></TextView>
 
         <TextView
-            android:id="@+id/txtNombre"
+            android:id="@+id/txtNombres"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8.5dp"
@@ -67,7 +68,7 @@
             app:layout_constraintTop_toBottomOf="@id/lblDni"></TextView>
 
         <TextView
-            android:id="@+id/lblCelular"
+            android:id="@+id/lblInicio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
@@ -80,7 +81,7 @@
             app:layout_constraintTop_toTopOf="parent"></TextView>
 
         <TextView
-            android:id="@+id/txtCelular"
+            android:id="@+id/txtTelefono"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
@@ -89,11 +90,11 @@
             android:text="958658548"
             android:textColor="#FCDC3C"
             android:textSize="13sp"
-            app:layout_constraintLeft_toRightOf="@id/lblCelular"
+            app:layout_constraintLeft_toRightOf="@id/lblInicio"
             app:layout_constraintTop_toTopOf="parent"></TextView>
 
         <TextView
-            android:id="@+id/lblGenero"
+            android:id="@+id/lblFinal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
@@ -102,7 +103,7 @@
             android:textColor="#FCDC3C"
             android:textSize="13sp"
             app:layout_constraintLeft_toRightOf="@id/txtDni"
-            app:layout_constraintTop_toBottomOf="@id/lblCelular"></TextView>
+            app:layout_constraintTop_toBottomOf="@id/lblInicio"></TextView>
 
         <TextView
             android:id="@+id/txtGenero"
@@ -113,11 +114,11 @@
             android:text="Femenino"
             android:textColor="#FCDC3C"
             android:textSize="13sp"
-            app:layout_constraintLeft_toRightOf="@id/lblCelular"
-            app:layout_constraintTop_toBottomOf="@id/txtCelular"></TextView>
+            app:layout_constraintLeft_toRightOf="@id/lblInicio"
+            app:layout_constraintTop_toBottomOf="@id/txtTelefono"></TextView>
 
         <TextView
-            android:id="@+id/lblEdad"
+            android:id="@+id/txtEdad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="8.5dp"
@@ -130,7 +131,7 @@
             app:layout_constraintRight_toRightOf="parent"></TextView>
 
         <TextView
-            android:id="@+id/txtEdad"
+            android:id="@+id/lbledad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="16dp"
@@ -140,10 +141,10 @@
             android:textColor="#FCDC3C"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="@id/lblEdad"></TextView>
+            app:layout_constraintRight_toRightOf="@id/txtEdad"></TextView>
 
         <CheckBox
-            android:id="@+id/checkBox3"
+            android:id="@+id/chkAccion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:buttonTint="#961137"

@@ -11,12 +11,16 @@ public class clsPersona {
     private String urlFoto;
     private String direccion;
     private String estado;
+    private String telefono;
+    private int edad;
 
     public clsPersona(int id, String dni, String nombre, String paterno, String materno, String genero, String fechaNacimiento,
-                      String urlFoto, String direccion, String estado)
+                      String urlFoto, String direccion, String estado, String telefono, int edad)
     {
 
         this.id=id;
+        this.dni=dni;
+        this.edad=edad;
         this.nombre=nombre;
         this.paterno=paterno;
         this.materno=materno;
@@ -25,8 +29,12 @@ public class clsPersona {
         this.urlFoto=urlFoto;
         this.direccion=direccion;
         this.estado= estado;
+        this.telefono=telefono;
 
     }
+    public clsPersona(){}
+
+    public String getTelefono() {return telefono;}
 
     public int getId() {
         return id;
@@ -36,8 +44,56 @@ public class clsPersona {
         return dni;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setPaterno(String paterno) {
+        this.paterno = paterno;
+    }
+
+    public void setMaterno(String materno) {
+        this.materno = materno;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public void setFechaNacimiento(String fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public void setUrlFoto(String urlFoto) {
+        this.urlFoto = urlFoto;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
     public String getNombre() {
-        return nombre;
+        return nombre+' '+ paterno;
     }
 
     public String getPaterno() {
@@ -54,6 +110,10 @@ public class clsPersona {
 
     public String getFechaNacimiento() {
         return fechaNacimiento;
+    }
+
+    public int getEdad() {
+        return edad;
     }
 
     public String getUrlFoto() {

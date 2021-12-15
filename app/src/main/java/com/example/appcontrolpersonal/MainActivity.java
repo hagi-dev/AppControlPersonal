@@ -1,14 +1,30 @@
 package com.example.appcontrolpersonal;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     LinearLayout btnHome;
@@ -25,13 +41,17 @@ public class MainActivity extends AppCompatActivity {
     ImageView imgPersonal;
     TextView txtPersonal;
     Context context;
+    RecyclerView rclPersona;
+    private String urlPersonal = "http://127.0.0.1:3000/api/personal";
+    private List<clsPersona> personaList;
+    private RecyclerView.Adapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-
+        rclPersona=(RecyclerView)findViewById(R.id.rclPersona);
         imgHome=(ImageView)findViewById(R.id.imgHome);
         imgAsistencia=(ImageView)findViewById(R.id.imgAsistencia);
         imgContrato=(ImageView)findViewById(R.id.imgContrato);
@@ -48,6 +68,9 @@ public class MainActivity extends AppCompatActivity {
         imgHome.setColorFilter(getResources().getColor(R.color.selectionIcons));
         txtHome.setTextColor(getResources().getColor(R.color.selectionIcons));
         context = this;
+        personaList = new ArrayList<>();
+        adapter = new AdaptadorPersonal(getApplicationContext(),personaList);
+        rclPersona.setAdapter(adapter);
 
         btnAsistencia.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,6 +134,50 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+    private void getData() {
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Loading...");
+        progressDialog.show();
+
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(urlPersonal, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+                for (int i = 0; i < response.length(); i++) {
+                    try {
+                        JSONObject jsonObject = response.getJSONObject(i);
+
+                        clsPersona persona = new clsPersona();
+                        persona.setId(jsonObject.getInt("id"));
+                        persona.setDni(jsonObject.getString("dni"));
+                        persona.setNombre(jsonObject.getString("nombre"));
+                        persona.setEdad(jsonObject.getInt("edad"));
+                        persona.setPaterno(jsonObject.getString("apellidoPaterno"));
+                        persona.setMaterno(jsonObject.getString("apellidoMaterno"));
+                        persona.setGenero(jsonObject.getString("sexo"));
+                        persona.setTelefono(jsonObject.getString("telefono"));
+                        persona.setFechaNacimiento(jsonObject.getString("fechaNacimiento"));
+                        persona.setDireccion(jsonObject.getString("direccion"));
+                        persona.setUrlFoto(jsonObject.getString("foto"));
+
+
+                        personaList.add(persona);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        progressDialog.dismiss();
+                    }
+                }
+                adapter.notifyDataSetChanged();
+                progressDialog.dismiss();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e("Volley", error.toString());
+                progressDialog.dismiss();
+            }
+        });
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(jsonArrayRequest);
+    }
 }
-
-
