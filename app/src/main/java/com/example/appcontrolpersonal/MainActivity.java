@@ -1,6 +1,8 @@
 package com.example.appcontrolpersonal;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
@@ -12,6 +14,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -45,12 +48,14 @@ public class MainActivity extends AppCompatActivity {
     private String urlPersonal = "http://192.168.100.71:3000/api/personal";
     private List<clsPersona> personaList;
     private RecyclerView.Adapter adapter;
+    private LinearLayoutManager linearLayoutManager;
+    private DividerItemDecoration dividerItemDecoration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
+        context=this;
         rclPersona=(RecyclerView)findViewById(R.id.rclPersona);
         imgHome=(ImageView)findViewById(R.id.imgHome);
         imgAsistencia=(ImageView)findViewById(R.id.imgAsistencia);
@@ -70,7 +75,16 @@ public class MainActivity extends AppCompatActivity {
         context = this;
         personaList = new ArrayList<>();
         adapter = new AdaptadorPersonal(getApplicationContext(),personaList);
+        linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        dividerItemDecoration = new DividerItemDecoration(rclPersona.getContext(), linearLayoutManager.getOrientation());
+
+        rclPersona.setHasFixedSize(true);
+        rclPersona.setLayoutManager(linearLayoutManager);
+        rclPersona.addItemDecoration(dividerItemDecoration);
         rclPersona.setAdapter(adapter);
+
+        getData();
 
         btnAsistencia.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,7 +105,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 colorSelection("personal");
                 txtTitle.setText("Personal");
-                getData();
             }
         });
         btnContrato.setOnClickListener(new View.OnClickListener() {
@@ -147,7 +160,6 @@ public class MainActivity extends AppCompatActivity {
                 for (int i = 0; i < response.length(); i++) {
                     try {
                         JSONObject jsonObject = response.getJSONObject(i);
-
                         clsPersona persona = new clsPersona();
                         persona.setId(jsonObject.getInt("id"));
                         persona.setDni(jsonObject.getString("dni"));
