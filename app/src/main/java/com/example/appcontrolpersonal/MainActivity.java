@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     TextView txtPersonal;
     Context context;
     RecyclerView rclPersona;
-    private String urlPersonal = "http://127.0.0.1:3000/api/personal";
+    private String urlPersonal = "http://192.168.100.71:3000/api/personal";
     private List<clsPersona> personaList;
     private RecyclerView.Adapter adapter;
 
@@ -91,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 colorSelection("personal");
                 txtTitle.setText("Personal");
+                getData();
             }
         });
         btnContrato.setOnClickListener(new View.OnClickListener() {
