@@ -31,10 +31,8 @@ public class ContratoDate extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_control);
-        etFecha = (EditText) findViewById(R.id.dtpFecha);
-        //Widget ImageButton del cual usaremos el evento clic para obtener la fecha
-        ibObtenerFecha = (ImageView) findViewById(R.id.ib_obtener_fecha);
+        setContentView(R.layout.activity_contrato);
+
         //Evento setOnClickListener - clic
         ibObtenerFecha.setOnClickListener(new View.OnClickListener() {
             @Override

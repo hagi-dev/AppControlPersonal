@@ -3,6 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Disk C/Users/1.James/Documents/Git/AppControlPersonal/app/src/main/res/drawable/btn_bg.xml" value="0.240625" />
+        <entry key="..\:/Disk C/Users/1.James/Documents/Git/AppControlPersonal/app/src/main/res/drawable/contrato.xml" value="0.240625" />
+        <entry key="..\:/Disk C/Users/1.James/Documents/Git/AppControlPersonal/app/src/main/res/drawable/ic_baseline_perm_contact_calendar_24.xml" value="0.240625" />
+        <entry key="..\:/Disk C/Users/1.James/Documents/Git/AppControlPersonal/app/src/main/res/drawable/tbl_content.xml" value="0.240625" />
+        <entry key="..\:/Disk C/Users/1.James/Documents/Git/AppControlPersonal/app/src/main/res/drawable/tbl_head.xml" value="0.240625" />
+        <entry key="..\:/Disk C/Users/1.James/Documents/Git/AppControlPersonal/app/src/main/res/layout/activity_contrato.xml" value="0.25" />
+        <entry key="..\:/Disk C/Users/1.James/Documents/Git/AppControlPersonal/app/src/main/res/layout/activity_control.xml" value="0.33" />
+        <entry key="..\:/Disk C/Users/1.James/Documents/Git/AppControlPersonal/app/src/main/res/layout/activity_home.xml" value="0.22447916666666667" />
+        <entry key="..\:/Disk C/Users/1.James/Documents/Git/AppControlPersonal/app/src/main/res/layout/activity_registro_personal.xml" value="0.22447916666666667" />
+        <entry key="..\:/Disk C/Users/1.James/Documents/Git/AppControlPersonal/app/src/main/res/layout/lista_contrato_desing.xml" value="0.22447916666666667" />
+        <entry key="..\:/Disk C/Users/1.James/Documents/Git/AppControlPersonal/app/src/main/res/layout/lista_tipo_trabajador_desing.xml" value="0.22447916666666667" />
+        <entry key="..\:/Disk C/Users/1.James/Documents/Git/AppControlPersonal/app/src/main/res/layout/listas_personal_desing.xml" value="0.22447916666666667" />
+        <entry key="..\:/Disk C/Users/1.James/Documents/Git/AppControlPersonal/app/src/main/res/layout/row_table_content.xml" value="0.67" />
+        <entry key="..\:/Disk C/Users/1.James/Documents/Git/AppControlPersonal/app/src/main/res/menu/spinner_contrato.xml" value="0.22447916666666667" />
         <entry key="..\:/Disk C/Users/1.James/Documents/Git/appControlPers/AppControlPersonal/app/src/main/res/drawable/ic_baseline_add_circle_outline_24.xml" value="0.240625" />
         <entry key="..\:/Disk C/Users/1.James/Documents/Git/appControlPers/AppControlPersonal/app/src/main/res/drawable/ic_baseline_arrow_circle_down_24.xml" value="0.240625" />
         <entry key="..\:/Disk C/Users/1.James/Documents/Git/appControlPers/AppControlPersonal/app/src/main/res/layout/activity_control.xml" value="0.33" />

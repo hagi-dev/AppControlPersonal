@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:gravity="center_vertical"
+    >
+
+    <TableRow>
+        <TextView
+            android:id="@+id/i3tv_number"
+            android:text="01"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:paddingVertical="5dp"
+            android:width="0dp"
+            android:layout_weight="2"
+            />
+        <TextView
+            android:id="@+id/i3tv_name"
+            android:text="Mickey"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:paddingVertical="5dp"
+            android:width="0dp"
+            android:layout_weight="2"
+            />
+        <ImageView
+            android:id="@+id/i3Iv_delete"
+            android:src="@drawable/ic_baseline_delete_outline_24"
+            android:layout_gravity="center"
+            android:paddingVertical="5dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            />
+    </TableRow>
+
+</TableLayout>

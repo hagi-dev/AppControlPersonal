@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity_contrato"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundMenu"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/mulishbold"
+            android:text="Registrar"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="19dp"
+            android:layout_height="19dp"
+            android:background="@drawable/ic_baseline_arrow_back_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:fontFamily="@font/mulishbold"
+            android:text="Contrato"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="44dp"
+            android:layout_height="36dp"
+            android:src="@drawable/logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="530dp"
+        android:background="#3C000000"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:layout_editor_absoluteX="-25dp">
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/buscar"
+            android:backgroundTint="#E2A917"
+            app:layout_constraintBottom_toBottomOf="@+id/textField"
+            app:layout_constraintStart_toEndOf="@+id/textField"
+            app:layout_constraintTop_toTopOf="@+id/textField" />
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:id="@+id/textField"
+            android:layout_width="340dp"
+            android:layout_height="56dp"
+            android:hint="DNI Trabajador:"
+            android:textColorHint="#ABA9A9"
+            app:endIconMode="custom"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:startIconTint="@color/selectionIcons"
+            app:startIconDrawable="@drawable/ic_baseline_perm_contact_calendar_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:backgroundTint="#ABA9A9"
+                android:textColor="#FFFFFF"
+                android:textSize="14dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            app:helperText="Área"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textField">
+
+            <Spinner
+                android:id="@+id/i9Spn_area"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout3"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            app:helperText="Tipo de Trabajador"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textField">
+
+            <Spinner
+                android:id="@+id/i9Spn_tipoTrabajo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout2"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:hint="Inicio"
+            android:textColorHint="#ABA9A9"
+            app:endIconMode="custom"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:enabled="false"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:backgroundTint="#ABA9A9"
+                android:textColor="#FFFFFF"
+                android:textSize="14dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <Button
+            android:id="@+id/btn_pickerOne"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:backgroundTint="#FCDC3C"
+            android:background="@drawable/ic_baseline_calendar_month_24"
+            app:layout_constraintBottom_toBottomOf="@+id/textInputLayout2"
+            app:layout_constraintStart_toEndOf="@+id/textInputLayout2"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout0"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:hint="Finaliza"
+            android:textColorHint="#ABA9A9"
+            app:endIconMode="custom"
+            app:layout_constraintEnd_toStartOf="@+id/btn_pickerTwo"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:backgroundTint="#ABA9A9"
+                android:enabled="false"
+                android:textColor="#FFFFFF"
+                android:textSize="14dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_pickerTwo"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_baseline_calendar_month_24"
+            android:backgroundTint="#FCDC3C"
+            app:layout_constraintBottom_toBottomOf="@+id/textInputLayout0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textInputLayout0" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout53"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            app:helperText="Horario"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
+
+            <Spinner
+                android:id="@+id/i9Spn_are0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:background="@drawable/btn_bg"
+            android:id="@+id/outlinedButton"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text="Agregar"
+            android:textColor="#2EA39D"
+            app:icon="@drawable/ic_baseline_delete_outline_24"
+            app:layout_constraintBottom_toBottomOf="@+id/textInputLayout53"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:paddingVertical="10dp"
+            android:layout_height="200dp"
+            app:layout_constraintBottom_toTopOf="@+id/i9btn_save"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout53"
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TableRow
+                        android:minHeight="40dp"
+                        android:backgroundTint="#FCDC3C"
+                        android:background="@drawable/tbl_head"
+                        android:gravity="center_vertical"
+                        >
+                        <TextView
+                            android:backgroundTint="#FCDC3C"
+                            android:text="DIAS"
+                            android:textColor="#7D0F2E"
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            android:paddingVertical="5dp"
+                            android:width="0dp"
+                            android:layout_weight="2"
+                            />
+                        <TextView
+                            android:text="TURNO"
+                            android:textColor="#7D0F2E"
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            android:paddingVertical="5dp"
+                            android:width="0dp"
+                            android:layout_weight="2"
+                            />
+                        <TextView
+                            android:text="◘"
+                            android:textColor="#7D0F2E"
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            android:paddingVertical="5dp"
+                            android:width="0dp"
+                            android:layout_weight="1"
+                            />
+                    </TableRow>
+
+                </TableLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/i2rv_listOne"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/tbl_content"
+                    />
+
+            </LinearLayout>
+
+
+
+        </ScrollView>
+
+        <Button
+            android:id="@+id/i9btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_bg"
+            android:text="Agregar"
+            android:textColor="#2EA39D"
+            app:icon="@drawable/ic_baseline_delete_outline_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
