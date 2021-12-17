@@ -13,20 +13,28 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".activity_contrato"
+            android:name=".asistencia"
+            android:exported="true" />
+        <activity
+            android:name=".menu"
+            android:exported="true" />
+        <activity
+            android:name=".personal"
+            android:exported="true"
+            android:label="@string/title_activity_personal"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
-        </activity>
+            android:name=".activity_contrato"
+            android:exported="true" />
         <activity android:name=".ContratoDate" />
     </application>
 

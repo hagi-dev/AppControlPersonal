@@ -1,11 +1,11 @@
-
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background">
-    <!-- start of header-->
+    android:background="@color/background"
+    android:orientation="vertical">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="81dp"
@@ -22,7 +22,7 @@
             android:layout_marginTop="20dp"
             android:textSize="18dp"
             app:layout_goneMarginTop="20dp"
-            android:text="Home"
+            android:text="Personal"
             android:textColor="@color/white"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -37,15 +37,11 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- end of header-->
-    <!-- start of body-->
-    <!-- start contrato-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="81dp"
-        android:id="@+id/contrato"
-        android:visibility="invisible">
+
+        android:id="@+id/contrato">
         <!-- start of acciones static-->
         <LinearLayout
             android:id="@+id/linearLayout1"
@@ -74,21 +70,12 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="0dp"
-                    android:fontFamily="@font/mulish_regular"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="100dp"
-                    android:layout_weight="1"
-                    android:text="@string/text_subrayado"
-                    android:textColor="@color/white" />
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
-                    android:gravity="right|center_vertical"
+                    android:gravity="right"
                     android:orientation="horizontal">
 
 
@@ -96,7 +83,7 @@
                         android:id="@+id/button1"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:layout_marginHorizontal="5dp"
+                        android:layout_marginHorizontal="10dp"
                         android:background="@drawable/ic_baseline_filter_alt_24"
                         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
@@ -104,7 +91,7 @@
                         android:id="@+id/button6"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:layout_marginHorizontal="5dp"
+                        android:layout_marginHorizontal="10dp"
                         android:background="@drawable/ic_baseline_delete_outline_24"
                         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
@@ -112,7 +99,7 @@
                         android:id="@+id/button3"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:layout_marginHorizontal="5dp"
+                        android:layout_marginHorizontal="10dp"
                         android:background="@drawable/ic_baseline_history_24"
                         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
@@ -120,7 +107,7 @@
                         android:id="@+id/button4"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:layout_marginHorizontal="5dp"
+                        android:layout_marginHorizontal="10dp"
                         android:background="@drawable/ic_baseline_add_circle_outline_24"
                         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
@@ -128,7 +115,7 @@
                         android:id="@+id/button5"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:layout_marginHorizontal="5dp"
+                        android:layout_marginHorizontal="10dp"
                         android:background="@drawable/ic_baseline_arrow_circle_down_24"
                         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
                 </LinearLayout>
@@ -139,33 +126,28 @@
             android:id="@+id/ftlContrato"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:visibility="gone"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout1">
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-        <!-- start of filtering static-->
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/lstContrato"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/ftlContrato">
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-            </ScrollView>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-        <!-- end of list static-->
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-    <!-- end contrato-->
-    <!-- start personal-->
-    <!-- end personal-->
-    <!-- end of body-->
-    <!-- start of menu-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rclPersonal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
+        </androidx.recyclerview.widget.RecyclerView>
+    </ScrollView>
+
+    <!-- start of menu-->
     <include
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         layout="@layout/menu"></include>
+
     <!-- end of menu-->
 
-</FrameLayout>
+</LinearLayout>

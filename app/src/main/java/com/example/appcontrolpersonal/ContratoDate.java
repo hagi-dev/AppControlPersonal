@@ -34,7 +34,7 @@ public class ContratoDate extends AppCompatActivity {
         setContentView(R.layout.activity_contrato);
 
         //Evento setOnClickListener - clic
-        ibObtenerFecha.setOnClickListener(new View.OnClickListener() {
+       /* ibObtenerFecha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -64,9 +64,9 @@ public class ContratoDate extends AppCompatActivity {
             /**
              *También puede cargar los valores que usted desee
              */
-        },anio, mes, dia);
+       /* },anio, mes, dia);
         //Muestro el widget
-        recogerFecha.show();
+        recogerFecha.show();*/
 
     }
 }
