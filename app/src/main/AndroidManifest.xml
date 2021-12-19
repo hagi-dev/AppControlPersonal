@@ -12,11 +12,26 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true" >
         <activity
+<<<<<<< HEAD
             android:name=".contrato_add"
             android:exported="true" >
         </activity>
         <activity
             android:name=".crud_contrato"
+=======
+            android:name=".asistencia"
+            android:exported="true" />
+        <activity
+            android:name=".menu"
+            android:exported="true" />
+        <activity
+            android:name=".personal"
+            android:exported="true"
+            android:label="@string/title_activity_personal"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".MainActivity"
+>>>>>>> 52205cd5ac64f4fc98cf0e6c0bb1fef99934f893
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,10 +40,13 @@
         </activity>
         <activity
             android:name=".activity_contrato"
+<<<<<<< HEAD
             android:exported="true" >
         </activity>
         <activity
             android:name=".MainActivity"
+=======
+>>>>>>> 52205cd5ac64f4fc98cf0e6c0bb1fef99934f893
             android:exported="true" />
         <activity android:name=".ContratoDate" />
     </application>

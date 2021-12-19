@@ -1,25 +1,19 @@
 package com.example.appcontrolpersonal;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -34,7 +28,13 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class asistencia extends AppCompatActivity {
+    private String urlPersonal = "http://192.168.100.71:3000/api/personal";
+    private List<clsPersona> personaList;
+    private RecyclerView.Adapter adapter;
+    private LinearLayoutManager linearLayoutManager;
+    private DividerItemDecoration dividerItemDecoration;
+    RecyclerView rlcPersona;
     LinearLayout btnHome;
     LinearLayout btnContrato;
     LinearLayout btnPersonal;
@@ -48,16 +48,14 @@ public class MainActivity extends AppCompatActivity {
     TextView txtAsistencia;
     ImageView imgPersonal;
     TextView txtPersonal;
-    Context context;
-    ConstraintLayout contrato;
-    ConstraintLayout personal;
-    LinearLayout layoutPersonal;
+    Context contexto;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
-        context=this;
-        contrato=(ConstraintLayout)findViewById(R.id.contrato);
+        setContentView(R.layout.activity_asistencia);
+
+        contexto=this;
         imgHome=(ImageView)findViewById(R.id.imgHome);
         imgAsistencia=(ImageView)findViewById(R.id.imgAsistencia);
         imgContrato=(ImageView)findViewById(R.id.imgContrato);
@@ -71,37 +69,43 @@ public class MainActivity extends AppCompatActivity {
         btnPersonal=(LinearLayout)findViewById(R.id.btnPersonal);
         btnAsistencia=(LinearLayout)findViewById(R.id.btnAsistencia);
         btnContrato=(LinearLayout)findViewById(R.id.btnContrato);
-        imgHome.setColorFilter(getResources().getColor(R.color.selectionIcons));
-        txtHome.setTextColor(getResources().getColor(R.color.selectionIcons));
-        context = this;
+        imgPersonal.setColorFilter(getResources().getColor(R.color.selectionIcons));
+        txtPersonal.setTextColor(getResources().getColor(R.color.selectionIcons));
+        rlcPersona= (RecyclerView)findViewById(R.id.rclPersonal);
+        personaList = new ArrayList<>();
+        adapter = new AdaptadorPersonal(getApplicationContext(),personaList);
+        linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        dividerItemDecoration = new DividerItemDecoration(rlcPersona.getContext(), linearLayoutManager.getOrientation());
 
-
+        rlcPersona.setHasFixedSize(true);
+        rlcPersona.setLayoutManager(linearLayoutManager);
+        rlcPersona.addItemDecoration(dividerItemDecoration);
+        rlcPersona.setAdapter(adapter);
         btnAsistencia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 colorSelection("asistencia");
                 txtTitle.setText("Asistencia");
-                contrato.setVisibility(View.INVISIBLE);
             }
         });
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
                 colorSelection("home");
                 txtTitle.setText("Home");
-                contrato.setVisibility(View.INVISIBLE);
+                Intent intent= new Intent(contexto,MainActivity.class);
+                startActivity(intent);
+
             }
         });
         btnPersonal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
                 colorSelection("personal");
                 txtTitle.setText("");
-                Intent intent= new Intent(context,personal.class);
+                Intent intent= new Intent(contexto,personal.class);
                 startActivity(intent);
-                contrato.setVisibility(View.INVISIBLE);
 
             }
         });
@@ -110,16 +114,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 colorSelection("contrato");
                 txtTitle.setText("Contrato");
+                finish();
                 //Intent intent= new Intent(context, ContratoDate.class);
                 //startActivity(intent);
-                contrato.setVisibility(View.VISIBLE);
-
             }
         });
 
+
+        getData();
     }
-
-
 
     public void colorSelection(String dato){
         imgHome.setColorFilter(getResources().getColor(R.color.unableIcons));
@@ -151,5 +154,50 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void getData() {
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Loading...");
+        progressDialog.show();
 
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(urlPersonal, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+                for (int i = 0; i < response.length(); i++) {
+                    try {
+                        JSONObject jsonObject = response.getJSONObject(i);
+                        clsPersona persona = new clsPersona();
+                        persona.setId(jsonObject.getInt("id"));
+                        persona.setDni(jsonObject.getString("dni"));
+                        persona.setNombre(jsonObject.getString("nombre"));
+                        persona.setEdad(jsonObject.getInt("edad"));
+                        persona.setPaterno(jsonObject.getString("apellidoPaterno"));
+                        persona.setMaterno(jsonObject.getString("apellidoMaterno"));
+                        persona.setGenero(jsonObject.getString("sexo"));
+                        persona.setTelefono(jsonObject.getString("telefono"));
+                        persona.setFechaNacimiento(jsonObject.getString("fechaNacimiento"));
+                        persona.setDireccion(jsonObject.getString("direccion"));
+                        persona.setUrlFoto(jsonObject.getString("foto"));
+
+
+                        personaList.add(persona);
+                        System.out.println(persona.getNombre());
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        progressDialog.dismiss();
+                    }
+                }
+
+                adapter.notifyDataSetChanged();
+                progressDialog.dismiss();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e("Volley", error.toString());
+                progressDialog.dismiss();
+            }
+        });
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(jsonArrayRequest);
+    }
 }

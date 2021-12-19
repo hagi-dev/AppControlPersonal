@@ -15,18 +15,17 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.mikhaellopez.circularimageview.CircularImageView;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdaptadorPersonal extends RecyclerView.Adapter<AdaptadorPersonal.MyViewHodler> implements Filterable {
+public class AdaptadorContrato extends RecyclerView.Adapter<AdaptadorContrato.MyViewHodler> implements Filterable {
     LayoutInflater inflater;
-    List<clsPersona> personaArrayList;
+    List<clsContrato> ContratoArrayList;
 
-    public AdaptadorPersonal(Context context, List<clsPersona> personaArrayList) {
+    public AdaptadorContrato(Context context, List<clsContrato> ContratoArrayList) {
         this.inflater = LayoutInflater.from(context);
-        this.personaArrayList = personaArrayList;
+        this.ContratoArrayList = ContratoArrayList;
     }
 
     @NonNull
@@ -39,20 +38,21 @@ public class AdaptadorPersonal extends RecyclerView.Adapter<AdaptadorPersonal.My
     @Override
     public void onBindViewHolder(@NonNull MyViewHodler holder, int position) {
 
-        clsPersona persona = personaArrayList.get(position);
-        holder.txtDni.setText(persona.getDni());
+        clsContrato persona = ContratoArrayList.get(position);
+        /*holder.txtDni.setText(persona.getDni());
         holder.txtNombres.setText(persona.getNombre());
         holder.txtTelefono.setText(persona.getTelefono());
         holder.txtGenero.setText(persona.getGenero());
         holder.txtEdad.setText(persona.getEdad());
-        Picasso.get().load(persona.getUrlFoto()).into(holder.imgFotoPerfil);
+        holder.chkAccion.setText(persona.getId());
+        Picasso.get().load(persona.getUrlFoto()).into(holder.imgFotoPerfil);*/
 
     }
 
     @Override
     public int getItemCount() {
 
-        return personaArrayList.size();
+        return ContratoArrayList.size();
     }
 
     @Override
@@ -64,19 +64,19 @@ public class AdaptadorPersonal extends RecyclerView.Adapter<AdaptadorPersonal.My
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
 
-            ArrayList<clsPersona> personaArrayListFiltered = new ArrayList<>();
+            ArrayList<clsContrato> personaArrayListFiltered = new ArrayList<>();
 
             if (constraint==null || constraint.length()==0){
 
-                personaArrayListFiltered.addAll(personaArrayList);
+                personaArrayListFiltered.addAll(ContratoArrayList);
 
             }else {
 
                 String filterCriterio = constraint.toString().trim().toLowerCase();
 
-                for (clsPersona persona : personaArrayList)
-                    if (persona.getDni().toLowerCase().trim().contains(filterCriterio))
-                        personaArrayListFiltered.add(persona);
+                for (clsContrato contrato : ContratoArrayList)
+                    if (contrato.getEstado().trim().contains(filterCriterio))
+                        personaArrayListFiltered.add(contrato);
 
             }
 
@@ -90,8 +90,8 @@ public class AdaptadorPersonal extends RecyclerView.Adapter<AdaptadorPersonal.My
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results) {
 
-            personaArrayList.clear();
-            personaArrayList.addAll((ArrayList)results.values);
+            ContratoArrayList.clear();
+            ContratoArrayList.addAll((ArrayList)results.values);
             notifyDataSetChanged();
 
         }
@@ -129,5 +129,3 @@ public class AdaptadorPersonal extends RecyclerView.Adapter<AdaptadorPersonal.My
         }
     }
 }
-
-

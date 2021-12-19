@@ -112,8 +112,8 @@ public class clsPersona {
         return fechaNacimiento;
     }
 
-    public int getEdad() {
-        return edad;
+    public String getEdad() {
+        return String.valueOf(edad);
     }
 
     public String getUrlFoto() {
